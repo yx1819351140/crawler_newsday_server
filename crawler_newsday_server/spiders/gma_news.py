@@ -55,13 +55,13 @@ class GmaNewsSpider(scrapy.Spider):
                 is_repeat = self.mongo.is_repeat(self.settings.get('MONGO_TABLE'), _id)
                 if is_repeat:
                     self.logger.info(f'current news is repeat, url: {url}, _id: {_id}')
-                    break
+                    continue
                 item['_id'] = _id
-                item['news_id'] = 'crawler' + _id
+                item['news_id'] = 'crawler_' + _id
                 item['news_url'] = url
                 item['news_title'] = data.get('title', '')
                 item['news_description'] = data.get('lead', '')
-                item['news_content'], item['news_content_html'] = self.get_content(item['url'])
+                item['news_content'], item['news_content_html'] = self.get_content(item['news_url'])
                 item['news_publish_time'] = time_2_isotime(data.get('publish_timestamp', ''))
                 item['news_publish_timestamp'] = time_2_timestamp(data.get('publish_timestamp', ''))
                 item['news_head_pic'] = data.get('photo', {}).get('base_url', '') + data.get('photo', {}).get(

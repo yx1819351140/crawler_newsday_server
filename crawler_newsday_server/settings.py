@@ -99,8 +99,14 @@ LOG_LEVEL = 'INFO'
 HTTPERROR_ALLOWED_CODES = [301, 302]
 
 # Mongo
-MONGO_URL = '127.0.0.1'
-MONGO_DB = 'crawler_newsday'
+# 本地
+# MONGO_URL = '127.0.0.1'
+# MONGO_DB = 'crawler_newsday'
+# MONGO_TABLE = 'newsday_news'
+# MONGO_PORT = 27017
+# 远程
+MONGO_URL = 'mongodb://crawler_admin:Z3YqnP*vWqwmJt@54.221.67.195:27017/admin'
+MONGO_DB = 'news_crawler_raw'
 MONGO_TABLE = 'newsday_news'
 MONGO_PORT = 27017
 
