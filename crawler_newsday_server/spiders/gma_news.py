@@ -41,7 +41,7 @@ class GmaNewsSpider(scrapy.Spider):
 
     def start_requests(self):
         for category, category_id in self.category_list.items():
-            for i in range(10):
+            for i in range(5):
                 url = self.url.format(category, category_id - i)
                 yield Request(url, meta={'category': category, 'category_id': category_id}, callback=self.parse)
 
