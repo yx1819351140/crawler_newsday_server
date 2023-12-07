@@ -7,6 +7,8 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 import datetime
+import logging
+from logging.handlers import TimedRotatingFileHandler
 
 BOT_NAME = "crawler_newsday_server"
 
@@ -95,10 +97,19 @@ FEED_EXPORT_ENCODING = "utf-8"
 
 # 日志级别
 LOG_LEVEL = 'INFO'
-to_day = datetime.datetime.now()
-LOG_FILE = 'crawler_newsday_server/log/scrapy_{}_{}_{}.log'.format(to_day.year, to_day.month, to_day.day)
+LOG_FILE = 'crawler_newsday_server/log/scrapy.log'
 LOG_ENCODING = "UTF-8"
 # LOG_ENABLED = False
+# Configure the TimedRotatingFileHandler
+handler = TimedRotatingFileHandler(LOG_FILE, when="midnight", backupCount=5)
+handler.setLevel(logging.DEBUG)
+# Create a custom formatter
+formatter = logging.Formatter('%(asctime)s [%(name)s] %(levelname)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+handler.setFormatter(formatter)
+# Configure the root logger
+root_logger = logging.getLogger()
+root_logger.addHandler(handler)
+root_logger.setLevel(logging.DEBUG)
 
 # ERROR: HTTP status code is not handled or not allowed
 HTTPERROR_ALLOWED_CODES = [301, 302]
