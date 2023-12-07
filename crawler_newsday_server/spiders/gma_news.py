@@ -69,7 +69,7 @@ class GmaNewsSpider(scrapy.Spider):
                 item['news_source'] = 'GMA News'
                 item['news_category'] = data.get('section', {}).get('sec_name', '')
                 item['news_language'] = 'en'
-                item['news_country'] = ''
+                item['news_country'] = 'ph'
                 item['news_author_dict'] = {'author_name': data.get('author', ''), 'channel_name': '', 'author_img': ''}
                 item['news_status'] = 'active'
                 item['news_stat_dict'] = {"clicks": 0}
@@ -87,7 +87,7 @@ class GmaNewsSpider(scrapy.Spider):
             session.mount('http://', adapter)
             session.mount('https://', adapter)
 
-            # 本地调试，需要代理
+            # 本地调试，添加代理
             # res = session.get(url, proxies=self.proxies_host)
             # 国外服务器，暂时不添加代理
             res = session.get(url)

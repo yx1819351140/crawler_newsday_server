@@ -72,7 +72,7 @@ class CrawlerNewsdayServerDownloaderMiddleware:
     def process_request(self, request, spider):
         # Called for each request that goes through the downloader
         # middleware.
-        request.meta['proxy'] = 'http://' + self.settings.get('PROXY')
+        # request.meta['proxy'] = 'http://' + self.settings.get('PROXY')
         # Must either:
         # - return None: continue processing this request
         # - or return a Response object

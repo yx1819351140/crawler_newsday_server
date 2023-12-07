@@ -6,6 +6,7 @@
 #     https://docs.scrapy.org/en/latest/topics/settings.html
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
+import datetime
 
 BOT_NAME = "crawler_newsday_server"
 
@@ -94,6 +95,10 @@ FEED_EXPORT_ENCODING = "utf-8"
 
 # 日志级别
 LOG_LEVEL = 'INFO'
+to_day = datetime.datetime.now()
+LOG_FILE = 'crawler_newsday_server/log/scrapy_{}_{}_{}.log'.format(to_day.year, to_day.month, to_day.day)
+LOG_ENCODING = "UTF-8"
+# LOG_ENABLED = False
 
 # ERROR: HTTP status code is not handled or not allowed
 HTTPERROR_ALLOWED_CODES = [301, 302]
@@ -105,7 +110,7 @@ HTTPERROR_ALLOWED_CODES = [301, 302]
 # MONGO_TABLE = 'newsday_news'
 # MONGO_PORT = 27017
 # 远程
-MONGO_URL = 'mongodb://crawler_admin:Z3YqnP*vWqwmJt@54.221.67.195:27017/admin'
+MONGO_URL = 'mongodb://news_crawler:5V^N-IRSwntAQ*9z9ZxGCAWGzBOZoH@52.1.169.11:7817/news_crawler_raw'
 MONGO_DB = 'news_crawler_raw'
 MONGO_TABLE = 'newsday_news'
 MONGO_PORT = 27017
@@ -119,3 +124,8 @@ PROXY = '127.0.0.1:7890'
 RETRY_TIMES = 3
 # 设置重试间隔时间
 RETRY_BACKOFF_FACTOR = 2
+
+# 任务管理
+SPIDERS = {
+    'gma_news': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '7'},
+}
