@@ -100,7 +100,7 @@ class GmaNewsSpider(scrapy.Spider):
             for content_html in content_html_list:
                 temp_content = ''.join(content_html.xpath('.//text()'))
                 news_content = news_content + temp_content + '\n\n'
-            return news_content, news_content_html
+            return news_content.strip(), news_content_html
         except Exception as e:
             self.logger.error(f'get news content failed, url: {url}, error: {e}')
             return '', ''
