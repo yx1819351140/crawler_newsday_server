@@ -42,5 +42,5 @@ def run():
 
 if __name__ == '__main__':
     run()
-    # run_spider()
+    # run_spider('gma_news')
     # cmdline.execute("scrapy crawl gma_news".split())
