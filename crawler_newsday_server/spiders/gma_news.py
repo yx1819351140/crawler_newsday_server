@@ -74,6 +74,7 @@ class GmaNewsSpider(scrapy.Spider):
                 item['news_status'] = 'active'
                 item['news_stat_dict'] = {"clicks": 0}
                 item['news_crawler'] = 'local_crawler'
+                item['related_news'] = []
                 item['create_time'] = time_2_isotime(time.strftime('%Y-%m-%d %H:%M:%S'))
                 item['update_time'] = time_2_isotime(time.strftime('%Y-%m-%d %H:%M:%S'))
                 yield item

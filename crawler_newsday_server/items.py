@@ -25,5 +25,6 @@ class GmaNewsItem(scrapy.Item):
     news_status = scrapy.Field()
     news_stat_dict = scrapy.Field()
     news_crawler = scrapy.Field()
+    related_news = scrapy.Field()
     create_time = scrapy.Field()
     update_time = scrapy.Field()
