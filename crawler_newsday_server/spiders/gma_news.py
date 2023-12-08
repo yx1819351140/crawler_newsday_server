@@ -7,7 +7,7 @@ from scrapy.utils.project import get_project_settings
 from crawler_newsday_server.utils.common_utils import md5_string
 from crawler_newsday_server.utils.mongo_utils import MongoDB
 from crawler_newsday_server.utils.date_utils import time_2_timestamp, time_2_isotime
-from crawler_newsday_server.items import GmaNewsItem
+from crawler_newsday_server.items import NewsItem
 import logging
 import time
 from readability import Document
@@ -49,7 +49,7 @@ class GmaNewsSpider(scrapy.Spider):
         data_list = json.loads(response.text).get('data', [])
         if data_list:
             for data in data_list:
-                item = GmaNewsItem()
+                item = NewsItem()
                 url = 'https://www.gmanetwork.com/news/' + data.get('article_url', '')
                 _id = md5_string(url)
                 is_repeat = self.mongo.is_repeat(self.settings.get('MONGO_TABLE'), _id)

@@ -7,7 +7,7 @@
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
 from scrapy.utils.project import get_project_settings
-from crawler_newsday_server.items import GmaNewsItem
+from crawler_newsday_server.items import NewsItem
 from crawler_newsday_server.utils.mongo_utils import MongoDB
 import logging
 

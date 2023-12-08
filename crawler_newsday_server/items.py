@@ -6,7 +6,7 @@
 import scrapy
 
 
-class GmaNewsItem(scrapy.Item):
+class NewsItem(scrapy.Item):
     _id = scrapy.Field()
     news_id = scrapy.Field()
     news_title = scrapy.Field()
