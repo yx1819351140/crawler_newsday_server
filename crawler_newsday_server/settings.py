@@ -122,7 +122,7 @@ HTTPERROR_ALLOWED_CODES = [301, 302]
 # MONGO_PORT = 27017
 # 远程
 MONGO_URL = 'mongodb://newsday_crawler_admin:Z3YqnP*vWqwmJt@3.1.201.159:27017/?authSource=admin'
-MONGO_DB = 'news_crawler_raw'
+MONGO_DB = 'newsday_crawler_raw'
 MONGO_TABLE = 'newsday_news'
 MONGO_PORT = 27017
 
