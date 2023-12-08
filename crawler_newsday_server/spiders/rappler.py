@@ -23,7 +23,7 @@ class RapplerSpider(scrapy.Spider):
     settings = get_project_settings()
 
     def start_requests(self):
-        for i in range(1, 200):
+        for i in range(1, 20):
             url = f'https://www.rappler.com/latest/page/{i}/'
             yield Request(url, callback=self.parse)
 
