@@ -116,15 +116,15 @@ HTTPERROR_ALLOWED_CODES = [301, 302]
 
 # Mongo
 # 本地
-# MONGO_URL = '127.0.0.1'
-# MONGO_DB = 'crawler_newsday'
-# MONGO_TABLE = 'newsday_news'
-# MONGO_PORT = 27017
-# 远程
-MONGO_URL = 'mongodb://newsday_crawler_admin:Z3YqnP*vWqwmJt@3.1.201.159:27017/?authSource=admin'
-MONGO_DB = 'newsday_crawler_raw'
+MONGO_URL = '127.0.0.1'
+MONGO_DB = 'crawler_newsday'
 MONGO_TABLE = 'newsday_news'
 MONGO_PORT = 27017
+# 远程
+# MONGO_URL = 'mongodb://newsday_crawler_admin:Z3YqnP*vWqwmJt@3.1.201.159:27017/?authSource=admin'
+# MONGO_DB = 'newsday_crawler_raw'
+# MONGO_TABLE = 'newsday_news'
+# MONGO_PORT = 27017
 
 # 代理IP地址
 PROXIES_HOST = {'http': '127.0.0.1:7890', 'https': '127.0.0.1:7890'}
@@ -140,4 +140,5 @@ RETRY_BACKOFF_FACTOR = 2
 SPIDERS = {
     'gma_news': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '0,3,6,9,12,15,18,21', 'minute': '0'},
     'rappler': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '5'},
+    'inquirer': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '0'},
 }
