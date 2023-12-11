@@ -1,5 +1,6 @@
 import time
 from datetime import datetime
+from dateutil import tz, parser
 
 
 # 时间格式转时间戳
@@ -41,5 +42,15 @@ def get_days_diff(time_str1, time_str2=time.strftime('%Y-%m-%d')):
         return 0
 
 
+# 美国太平洋时区（PST）时间转时间格式
+def pst_2_strftime(time_str):
+    # 时区映射字典
+    timezone_mapping = {"PST": tz.gettz("America/Los_Angeles")}
+    # 解析时间字符串
+    parsed_time = parser.parse(time_str, tzinfos=timezone_mapping)
+    return parsed_time.strftime("%Y-%m-%d %H:%M:%S")
+
+
 if __name__ == '__main__':
-    print(time_2_isotime(time.strftime('%Y-%m-%d %H:%M:%S')))
+    # print(time_2_isotime(time.strftime('%Y-%m-%d %H:%M:%S')))
+    print(pst_2_strftime('Fri, 08 Dec 2023 09:37:21 PST'))
