@@ -141,4 +141,5 @@ SPIDERS = {
     'gma_news': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '0,3,6,9,12,15,18,21', 'minute': '0'},
     'rappler': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '5'},
     'inquirer': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '0'},
+    'manila_bulletin': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '0'},
 }
