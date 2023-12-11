@@ -1,5 +1,3 @@
-from typing import Iterable
-
 from gne import GeneralNewsExtractor
 from lxml import etree
 from readability import Document
