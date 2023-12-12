@@ -80,7 +80,7 @@ class RapplerSpider(scrapy.Spider):
                 item['news_publish_time'] = publish_time
                 item['news_publish_timestamp'] = publish_timestamp
                 item['news_head_pic'] = head_pic
-                item['news_source'] = 'Rappler'
+                item['news_source'] = 'rappler'
                 item['news_category'] = category
                 item['news_language'] = 'en'
                 item['news_country'] = 'ph'

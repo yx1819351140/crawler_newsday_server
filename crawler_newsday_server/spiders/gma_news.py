@@ -66,7 +66,7 @@ class GmaNewsSpider(scrapy.Spider):
                 item['news_publish_timestamp'] = time_2_timestamp(data.get('publish_timestamp', ''))
                 item['news_head_pic'] = data.get('photo', {}).get('base_url', '') + data.get('photo', {}).get(
                     'image_filename', '')
-                item['news_source'] = 'GMA News'
+                item['news_source'] = 'gma_news'
                 item['news_category'] = data.get('section', {}).get('sec_name', '')
                 item['news_language'] = 'en'
                 item['news_country'] = 'ph'

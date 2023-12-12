@@ -142,4 +142,5 @@ SPIDERS = {
     'rappler': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '5'},
     'inquirer': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '0'},
     'manila_bulletin': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '0'},
+    'philstar': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '0'},
 }
