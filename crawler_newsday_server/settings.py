@@ -143,4 +143,5 @@ SPIDERS = {
     'inquirer': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '0'},
     'manila_bulletin': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '0'},
     'philstar': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '0'},
+    'abs_cbn': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '10'},
 }
