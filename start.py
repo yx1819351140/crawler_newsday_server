@@ -3,11 +3,16 @@ from scrapy import cmdline
 from scrapy.utils.project import get_project_settings
 from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.events import EVENT_JOB_EXECUTED, EVENT_JOB_ERROR
+from twisted.internet import reactor, threads
+
+
+def run_spider_in_thread(spider_name):
+    # subprocess.Popen(f"scrapy crawl {spider_name}", shell=True)
+    cmdline.execute(f"scrapy crawl {spider_name}".split())
 
 
 def run_spider(spider_name):
-    # subprocess.Popen(f"scrapy crawl {spider_name}", shell=True)
-    cmdline.execute(f"scrapy crawl {spider_name}".split())
+    threads.blockingCallFromThread(reactor, run_spider_in_thread, spider_name)
 
 
 def create_job():
