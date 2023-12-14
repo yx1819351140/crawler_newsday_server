@@ -125,6 +125,7 @@ MONGO_URL = 'mongodb://crawler_admin:Z3YqnP*vWqwmJt@52.221.188.240:27017/?authSo
 MONGO_DB = 'newsday_crawler_raw'
 MONGO_DB1 = ''
 MONGO_TABLE = 'newsday_news'
+MONGO_TABLE1 = 'newsday_category'
 MONGO_PORT = 27017
 
 # Redis
