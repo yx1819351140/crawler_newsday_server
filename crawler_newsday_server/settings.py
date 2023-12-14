@@ -123,8 +123,19 @@ HTTPERROR_ALLOWED_CODES = [301, 302]
 # 远程
 MONGO_URL = 'mongodb://crawler_admin:Z3YqnP*vWqwmJt@52.221.188.240:27017/?authSource=admin'
 MONGO_DB = 'newsday_crawler_raw'
+MONGO_DB1 = ''
 MONGO_TABLE = 'newsday_news'
 MONGO_PORT = 27017
+
+# Redis
+# 本地
+REDIS_HOST = '127.0.0.1'
+REDIS_PORT = 6379
+REDIS_PASSWORD = ''
+# 远程
+# REDIS_HOST = ''
+# REDIS_PORT = 6379
+# REDIS_PASSWORD = ''
 
 # 代理IP地址
 PROXIES_HOST = {'http': '127.0.0.1:7890', 'https': '127.0.0.1:7890'}
