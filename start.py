@@ -6,7 +6,8 @@ from apscheduler.events import EVENT_JOB_EXECUTED, EVENT_JOB_ERROR
 
 
 def run_spider(spider_name):
-    subprocess.Popen(f"scrapy crawl {spider_name}", shell=True)
+    # subprocess.Popen(f"scrapy crawl {spider_name}", shell=True)
+    cmdline.execute(f"scrapy crawl {spider_name}".split())
 
 
 def create_job():
