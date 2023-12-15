@@ -84,8 +84,8 @@ class ManilaBulletinSpider(scrapy.Spider):
                     }
                     item['news_crawler'] = 'local_crawler'
                     item['related_news'] = []
-                    item['create_time'] = time_2_isotime(convert_to_beijing_time)
-                    item['update_time'] = time_2_isotime(convert_to_beijing_time)
+                    item['create_time'] = time_2_isotime(convert_to_beijing_time())
+                    item['update_time'] = time_2_isotime(convert_to_beijing_time())
                     yield item
         except Exception as e:
             self.logger.error(f'get news content failed, url: {response.url}, error: {e}')

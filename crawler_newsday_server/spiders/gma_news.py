@@ -75,8 +75,8 @@ class GmaNewsSpider(scrapy.Spider):
                 item['news_stat_dict'] = {"clicks": 0}
                 item['news_crawler'] = 'local_crawler'
                 item['related_news'] = []
-                item['create_time'] = time_2_isotime(convert_to_beijing_time)
-                item['update_time'] = time_2_isotime(convert_to_beijing_time)
+                item['create_time'] = time_2_isotime(convert_to_beijing_time())
+                item['update_time'] = time_2_isotime(convert_to_beijing_time())
                 yield item
 
     def get_content(self, url):
