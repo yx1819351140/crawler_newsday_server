@@ -6,7 +6,7 @@ from scrapy import Request
 from scrapy.utils.project import get_project_settings
 from crawler_newsday_server.utils.common_utils import md5_string
 from crawler_newsday_server.utils.mongo_utils import MongoDB
-from crawler_newsday_server.utils.date_utils import time_2_timestamp, time_2_isotime
+from crawler_newsday_server.utils.date_utils import time_2_timestamp, time_2_isotime, convert_to_beijing_time
 from crawler_newsday_server.items import NewsItem
 import logging
 import time
@@ -75,8 +75,8 @@ class GmaNewsSpider(scrapy.Spider):
                 item['news_stat_dict'] = {"clicks": 0}
                 item['news_crawler'] = 'local_crawler'
                 item['related_news'] = []
-                item['create_time'] = time_2_isotime(time.strftime('%Y-%m-%d %H:%M:%S'))
-                item['update_time'] = time_2_isotime(time.strftime('%Y-%m-%d %H:%M:%S'))
+                item['create_time'] = time_2_isotime(convert_to_beijing_time)
+                item['update_time'] = time_2_isotime(convert_to_beijing_time)
                 yield item
 
     def get_content(self, url):

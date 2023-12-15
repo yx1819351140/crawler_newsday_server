@@ -1,6 +1,7 @@
 import time
 from datetime import datetime
 from dateutil import tz, parser
+import pytz
 
 
 # 时间格式转时间戳
@@ -51,6 +52,27 @@ def pst_2_strftime(time_str):
     return parsed_time.strftime("%Y-%m-%d %H:%M:%S")
 
 
+# 将时间字符串转换为北京时间
+def convert_to_beijing_time():
+    # 获取当前系统时间
+    current_time = datetime.now()
+
+    # 获取当前系统时间的时区信息
+    current_timezone = current_time.tzinfo
+
+    # 获取北京时区的时区信息
+    beijing_timezone = pytz.timezone('Asia/Shanghai')
+
+    # 判断当前系统时间是否为北京时间
+    if current_timezone != beijing_timezone:
+        # 如果不是北京时间，将其转换为北京时间
+        current_time = datetime.now(beijing_timezone)
+
+    # 返回格式化后的时间字符串
+    return current_time.strftime('%Y-%m-%d %H:%M:%S')
+
+
 if __name__ == '__main__':
     # print(time_2_isotime(time.strftime('%Y-%m-%d %H:%M:%S')))
-    print(pst_2_strftime('Fri, 08 Dec 2023 09:37:21 PST'))
+    # print(pst_2_strftime('Fri, 08 Dec 2023 09:37:21 PST'))
+    print(convert_to_beijing_time())
