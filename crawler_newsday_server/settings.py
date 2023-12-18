@@ -112,7 +112,7 @@ root_logger.addHandler(handler)
 root_logger.setLevel(logging.INFO)
 
 # ERROR: HTTP status code is not handled or not allowed
-HTTPERROR_ALLOWED_CODES = [301, 302]
+HTTPERROR_ALLOWED_CODES = [301, 302, 403, 404]
 
 # Mongo
 # 本地
