@@ -152,12 +152,12 @@ RETRY_BACKOFF_FACTOR = 2
 
 # 任务管理
 SPIDERS = {
-    'gma_news': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '0,3,6,9,12,15,18,21', 'minute': '0'},
-    'rappler': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '5'},
-    'inquirer': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '0'},
-    'manila_bulletin': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '0'},
-    'philstar': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '0'},
-    'abs_cbn': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '10'},
-    'sunstar': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '5'},
+    'gma_news': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '0,30'},
+    'rappler': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '0,30'},
+    'inquirer': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '0,30'},
+    'manila_bulletin': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '5,35'},
+    'philstar': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '5,35'},
+    'abs_cbn': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '5,35'},
+    'sunstar': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '10,40'},
+    'business_world': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '10,40'},
 }
-SPIDERS_TABLE = 'newsday_spiders'
