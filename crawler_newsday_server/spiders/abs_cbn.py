@@ -20,7 +20,10 @@ class AbsCbnSpider(scrapy.Spider):
     logger = logging.getLogger(__name__)
     settings = get_project_settings()
     headers = {
-        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
+        'Accept-Encoding': 'gzip, deflate',
+        'Accept': '*/*',
+        'Connection': 'keep-alive'
     }
     catrgory_list = ['news', 'business', 'entertainment', 'life', 'sports', 'overseas', 'spotlight', 'weather', 'tv-patrol', 'dzmm', 'tfcnews', 'anc', 'ancx']
 
