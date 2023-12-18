@@ -1,6 +1,7 @@
 import subprocess
-from crawler_newsday_server.settings import SPIDERS
+from crawler_newsday_server.settings import SPIDERS_TABLE
 from apscheduler.schedulers.blocking import BlockingScheduler
+from crawler_newsday_server.utils.mongo_utils import MongoDB
 
 
 def run_spider(spider_name):
@@ -10,12 +11,15 @@ def run_spider(spider_name):
 
 def run():
     sched = BlockingScheduler()
-    for spider_name in SPIDERS:
-        trigger = SPIDERS[spider_name]['trigger']
-        month = SPIDERS[spider_name]['month']
-        day = SPIDERS[spider_name]['day']
-        hour = SPIDERS[spider_name]['hour']
-        minute = SPIDERS[spider_name]['minute']
+    mongo = MongoDB()
+    spider_list = mongo.db[SPIDERS_TABLE].find()
+    for spider in spider_list:
+        spider_name = spider['spider_name']
+        trigger = spider['trigger']
+        month = spider['month']
+        day = spider['day']
+        hour = spider['hour']
+        minute = spider['minute']
         # 添加任务
         sched.add_job(run_spider, trigger, month=month, day=day, hour=hour, minute=minute, args=[spider_name, ])
     sched.start()

@@ -160,3 +160,4 @@ SPIDERS = {
     'abs_cbn': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '10'},
     'sunstar': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '5'},
 }
+SPIDERS_TABLE = 'newsday_spiders'
