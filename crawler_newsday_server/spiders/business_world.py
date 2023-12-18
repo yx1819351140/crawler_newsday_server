@@ -23,7 +23,7 @@ class BusinessWorldSpider(scrapy.Spider):
 
     def start_requests(self):
         for category in self.category_list:
-            for page in range(20):
+            for page in range(5):
                 url = f'https://bworldonline.com/{category}/page/{page}/'
                 yield Request(url, meta={'category': category}, callback=self.parse)
 
