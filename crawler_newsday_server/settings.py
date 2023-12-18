@@ -99,19 +99,19 @@ FEED_EXPORT_ENCODING = "utf-8"
 
 # 日志级别
 LOG_LEVEL = 'INFO'
-# LOG_FILE = 'crawler_newsday_server/log/scrapy.log'
-# LOG_ENCODING = "UTF-8"
-# # LOG_ENABLED = False
-# # Configure the TimedRotatingFileHandler
-# handler = TimedRotatingFileHandler(LOG_FILE, when="midnight", backupCount=5)
-# handler.setLevel(logging.INFO)
-# # Create a custom formatter
-# formatter = logging.Formatter('%(asctime)s [%(name)s] %(levelname)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
-# handler.setFormatter(formatter)
-# # Configure the root logger
-# root_logger = logging.getLogger()
-# root_logger.addHandler(handler)
-# root_logger.setLevel(logging.INFO)
+LOG_FILE = 'crawler_newsday_server/log/scrapy.log'
+LOG_ENCODING = "UTF-8"
+# LOG_ENABLED = False
+# Configure the TimedRotatingFileHandler
+handler = TimedRotatingFileHandler(LOG_FILE, when="midnight", backupCount=5)
+handler.setLevel(logging.INFO)
+# Create a custom formatter
+formatter = logging.Formatter('%(asctime)s [%(name)s] %(levelname)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+handler.setFormatter(formatter)
+# Configure the root logger
+root_logger = logging.getLogger()
+root_logger.addHandler(handler)
+root_logger.setLevel(logging.INFO)
 
 # ERROR: HTTP status code is not handled or not allowed
 HTTPERROR_ALLOWED_CODES = [301, 302, 403, 404]
