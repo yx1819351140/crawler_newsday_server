@@ -22,6 +22,9 @@ class CrawlerNewsdayServerPipeline:
 
     def process_item(self, item, spider):
         if item['news_title'] and item['news_content']:
-            self.db.insert_data(self.settings.get('MONGO_TABLE'), dict(item))
-            logger.info(f'insert data success!insert_id: {item["_id"]}')
+            try:
+                self.db.insert_data(self.settings.get('MONGO_TABLE'), dict(item))
+                logger.info(f'insert data success!insert_id: {item["_id"]}')
+            except Exception as e:
+                logger.error(f'insert data error!insert_id: {item["_id"]}, error: {e}')
         return item

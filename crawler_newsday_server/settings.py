@@ -156,4 +156,5 @@ SPIDERS = {
     'manila_bulletin': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '0'},
     'philstar': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '0'},
     'abs_cbn': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '10'},
+    'sunstar': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '5'},
 }

@@ -16,6 +16,23 @@ def time_2_timestamp(time_str):
         return time_str
 
 
+# 时间戳转时间格式
+def timestamp_2_time(timestamp):
+    try:
+        # 判断时间戳是否是以毫秒为单位
+        if len(str(timestamp)) > 10:
+            # 如果是毫秒时间戳，将其除以1000转换为秒
+            timestamp /= 1000
+
+        # 使用datetime.fromtimestamp将时间戳转换为datetime对象
+        dt_object = datetime.fromtimestamp(timestamp)
+
+        # 返回格式化后的时间字符串
+        return dt_object.strftime('%Y-%m-%d %H:%M:%S')
+    except:
+        return timestamp
+
+
 # 时间格式转ISODate
 def time_2_isotime(time_str):
     try:
@@ -75,4 +92,4 @@ def convert_to_beijing_time():
 if __name__ == '__main__':
     # print(time_2_isotime(time.strftime('%Y-%m-%d %H:%M:%S')))
     # print(pst_2_strftime('Fri, 08 Dec 2023 09:37:21 PST'))
-    print(convert_to_beijing_time())
+    print(timestamp_2_time(1702620354727))
