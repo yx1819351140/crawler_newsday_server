@@ -20,7 +20,7 @@ class InteraksyonSpider(scrapy.Spider):
     settings = get_project_settings()
 
     def start_requests(self):
-        for page in range(1, 100):
+        for page in range(1, 6):
             url = f'https://interaksyon.philstar.com/news/page/{page}/'
             yield Request(url, callback=self.parse)
 
