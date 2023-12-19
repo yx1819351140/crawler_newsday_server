@@ -87,6 +87,9 @@ class ManilatimesSpider(scrapy.Spider):
                     news_content_html = document.summary(html_partial=True)
                 except:
                     news_content_html = ''
+                category = response.meta['category']
+                if 'lifestyle' in category:
+                    category = 'lifestyle'
 
                 item = NewsItem()
                 item['_id'] = _id
@@ -100,7 +103,7 @@ class ManilatimesSpider(scrapy.Spider):
                 item['news_publish_timestamp'] = publish_timestamp
                 item['news_head_pic'] = head_pic
                 item['news_source'] = 'manila_times'
-                item['news_category'] = response.meta['category']
+                item['news_category'] = category
                 item['news_language'] = 'en'
                 item['news_country'] = 'ph'
                 item['news_author_dict'] = {'author_name': author_name, 'channel_name': '', 'author_img': ''}
