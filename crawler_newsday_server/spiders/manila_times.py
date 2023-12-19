@@ -24,7 +24,7 @@ class ManilatimesSpider(scrapy.Spider):
 
     def start_requests(self):
         for category in self.category_list:
-            for page in range(1, 21):
+            for page in range(1, 6):
                 url = f'https://www.manilatimes.net/{category}/page/{page}/'
                 yield Request(url, meta={'category': category}, callback=self.parse)
 
