@@ -162,4 +162,5 @@ SPIDERS = {
     'business_world': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '10,40'},
     'manila_times': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '10,40'},
     'interaksyon': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '15,45'},
+    'mindanao_times': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '15,45'},
 }
