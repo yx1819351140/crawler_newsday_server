@@ -163,4 +163,5 @@ SPIDERS = {
     'manila_times': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '10,40'},
     'interaksyon': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '15,45'},
     'mindanao_times': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '15,45'},
+    'panay': {'trigger': 'cron', 'month': '*', 'day': '*', 'hour': '*', 'minute': '20,50'},
 }
