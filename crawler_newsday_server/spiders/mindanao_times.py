@@ -52,7 +52,7 @@ class MindanaoTimesSpider(scrapy.Spider):
             try:
                 content = ''
                 html = etree.HTML(response.text)
-                content_html_list = html.xpath('//div[@class="post-content"/p')
+                content_html_list = html.xpath('//div[@class="post-content"]/p')
                 for content_html in content_html_list:
                     temp_content = ''.join(content_html.xpath('.//text()'))
                     content = content + temp_content + '\n\n'
